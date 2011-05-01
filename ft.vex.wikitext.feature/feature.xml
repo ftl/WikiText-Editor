@@ -21,6 +21,11 @@
       <update label="%updateSiteName" url="http://www.thienel-software.de/vex/WikiText-Editor"/>
    </url>
 
+   <requires>
+      <import feature="org.eclipse.wst.xml.vex.feature" version="1.0.0" match="compatible"/>
+      <import feature="org.eclipse.mylyn.wikitext_feature" version="1.4.0" match="compatible"/>
+   </requires>
+
    <plugin
          id="ft.vex.wikitext"
          download-size="0"
