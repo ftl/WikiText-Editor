@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="ft.vex.wikitext.feature"
+      label="%featureName"
+      version="0.1.0.qualifier"
+      provider-name="%providerName">
+
+   <description url="http://www.thienel-software.de">
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://www.thienel-software.de/vex/WikiText-Editor"/>
+   </url>
+
+   <plugin
+         id="ft.vex.wikitext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/ft.vex.wikitext.feature_0.1.0.qualifier.jar" id="ft.vex.wikitext.feature" version="0.1.0.qualifier">
+      <category name="vex.wikitext.category"/>
+   </feature>
+   <category-def name="vex.wikitext.category" label="WikiText Editor based on the Visual Editor for XML"/>
+</site>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>ft.vex.wikitext</groupId>
+	<artifactId>ft.vex.wikitext.releng</artifactId>
+	<name>WikiText Editor based on the Visual Editor for XML (RelEng)</name>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<tycho-version>0.8.0</tycho-version>
+	</properties>
+ 
+	<modules>
+		<module>../ft.vex.wikitext</module>
+		<module>../ft.vex.wikitext.feature</module>
+		<module>../ft.vex.wikitext.repository</module>
+	</modules>
+
+	<scm>
+		<url>http://github.com/ftl/WikiText-Editor</url>
+	</scm>
+	<organization>
+		<name>Florian Thienel Softwareentwicklung</name>
+		<url>http://www.thienel-software.de</url>
+	</organization>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.sonatype.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.sonatype.tycho</groupId>
+					<artifactId>maven-osgi-compiler-plugin</artifactId>
+					<version>${tycho-version}</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.4.1</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+			</plugins>
+			
+		</pluginManagement>
+	</build>
+	<repositories>
+		<repository>
+			<id>vex-ci</id>
+			<url>https://hudson.eclipse.org/hudson/job/cbi-wtp-inc.vex/lastSuccessfulBuild/artifact/sourceediting/development/org.eclipse.wst.xml.vex.repository/target/site</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>webtools-update</id>
+			<url>http://download.eclipse.org/webtools/updates</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>dltk1.0</id>
+			<url>http://download.eclipse.org/technology/dltk/updates-dev/1.0</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>galileo</id>
+			<url>http://download.eclipse.org/releases/galileo/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>orbit</id>
+			<url>http://download.eclipse.org/tools/orbit/downloads/drops/R20100519200754/repository</url>
+			<layout>p2</layout>
+		</repository>
+	</repositories>
+</project>
+
