@@ -3,10 +3,13 @@ package ft.vex.wikitext.ui.editor;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.URL;
 
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.mylyn.wikitext.core.WikiText;
 import org.eclipse.mylyn.wikitext.core.parser.MarkupParser;
@@ -20,8 +23,12 @@ import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IStorageEditorInput;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.EditorPart;
+import org.eclipse.wst.xml.vex.core.internal.css.StyleSheet;
+import org.eclipse.wst.xml.vex.core.internal.css.StyleSheetReader;
 import org.eclipse.wst.xml.vex.core.internal.dom.Document;
 import org.eclipse.wst.xml.vex.core.internal.dom.DocumentWriter;
+import org.eclipse.wst.xml.vex.core.internal.validator.WTPVEXValidator;
+import org.eclipse.wst.xml.vex.ui.internal.swt.VexWidget;
 
 import ft.vex.wikitext.Activator;
 import ft.vex.wikitext.VexDocumentBuilder;
@@ -30,10 +37,12 @@ import ft.vex.wikitext.VexDocumentBuilder;
 public class WikiTextEditor extends EditorPart {
 
 	public static final String ID = "ft.vex.wikitext.editor"; //$NON-NLS-1$
-	
+
 	private Document document;
-	
+
 	private Text sourceText;
+
+	private VexWidget vexWidget;
 
 	@Override
 	public void init(final IEditorSite site, final IEditorInput input) throws PartInitException {
@@ -68,7 +77,7 @@ public class WikiTextEditor extends EditorPart {
 		}
 		document = documentBuilder.getDocument();
 	}
-	
+
 	private static MarkupLanguage getMarkupLanguage(final IStorageEditorInput input) {
 		final String name;
 		if (input instanceof IFileEditorInput)
@@ -76,30 +85,42 @@ public class WikiTextEditor extends EditorPart {
 		else
 			name = input.getName();
 		final MarkupLanguage result = WikiText.getMarkupLanguageForFilename(name);
-		if (result == null) 
+		if (result == null)
 			return WikiText.getMarkupLanguage("Textile"); //$NON-NLS-1$
 		return result;
 	}
 
 	@Override
 	public void createPartControl(final Composite parent) {
-		sourceText = new Text(parent, SWT.MULTI | SWT.READ_ONLY);
-		if (document != null) {
-			final DocumentWriter documentWriter = new DocumentWriter();
-			final ByteArrayOutputStream buffer = new ByteArrayOutputStream();
-			try {
-				documentWriter.write(document, buffer);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			sourceText.setText(new String(buffer.toByteArray()));
+		// TODO trace
+		final DocumentWriter documentWriter = new DocumentWriter();
+		final ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+		try {
+			documentWriter.write(document, buffer);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		System.out.println(buffer.toString());
+
+		final URL dtdUrl = FileLocator.find(Activator.getDefault().getBundle(), new Path("documenttype/wikitext.dtd"), null);
+		final WTPVEXValidator validator = WTPVEXValidator.create(dtdUrl);
+		document.setValidator(validator);
+
+		final URL styleSheetUrl = FileLocator.find(Activator.getDefault().getBundle(), new Path("documenttype/wikitext.css"), null);
+		final StyleSheet styleSheet;
+		try {
+			styleSheet = new StyleSheetReader().read(styleSheetUrl);
+		} catch (IOException e) {
+			throw new AssertionError("Cannot read stylesheet! " + e.getMessage());
+		}
+
+		vexWidget = new VexWidget(parent, SWT.V_SCROLL);
+		vexWidget.setDocument(document, styleSheet);
 	}
 
 	@Override
 	public void setFocus() {
-		sourceText.setFocus();
+		vexWidget.setFocus();
 	}
 
 	@Override

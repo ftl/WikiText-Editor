@@ -29,14 +29,13 @@ import org.eclipse.wst.xml.vex.core.internal.dom.RootElement;
 @SuppressWarnings("restriction")
 public class VexDocumentBuilder extends DocumentBuilder {
 
-	public static final String WIKITEXT_NAMESPACE = "http://wikitext.vex.ft";
+	public static final String WIKITEXT_NAMESPACE = null;
 
 	public static final QualifiedName ROOT = new QualifiedName(WIKITEXT_NAMESPACE, "wikitext");
 	public static final QualifiedName HEADING = new QualifiedName(WIKITEXT_NAMESPACE, "heading");
 	public static final QualifiedName ENTITY = new QualifiedName(WIKITEXT_NAMESPACE, "entity");
 	public static final QualifiedName IMAGE = new QualifiedName(WIKITEXT_NAMESPACE, "image");
 	public static final QualifiedName LINK = new QualifiedName(WIKITEXT_NAMESPACE, "link");
-	public static final QualifiedName IMAGE_LINK = new QualifiedName(WIKITEXT_NAMESPACE, "imageLink");
 	public static final QualifiedName ACRONYM = new QualifiedName(WIKITEXT_NAMESPACE, "acronym");
 	public static final QualifiedName LINEBREAK = new QualifiedName(WIKITEXT_NAMESPACE, "linebreak");
 	public static final QualifiedName UNESCAPED = new QualifiedName(WIKITEXT_NAMESPACE, "unescaped");

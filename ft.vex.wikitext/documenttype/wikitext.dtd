@@ -1,0 +1,151 @@
+<!ENTITY % blockElements "heading|entity|image|link|acronym|linebreak|unescaped|CODE|DEFINITION_TERM|DIV|TABLE_ROW|TABLE_CELL_HEADER|DEFINITION_LIST|TABLE_CELL_NORMAL|QUOTE|FOOTNOTE|TIP|NOTE|PANEL|PREFORMATTED|NUMERIC_LIST|DEFINITION_ITEM|TABLE|LIST_ITEM|PARAGRAPH|WARNING|BULLETED_LIST|INFORMATION" >
+<!ENTITY % spanElements "INSERTED|CITATION|SUPERSCRIPT|MONOSPACE|BOLD|SPAN|CODE|DELETED|QUOTE|STRONG|SUBSCRIPT|UNDERLINED|LINK|EMPHASIS|ITALIC" >
+<!ENTITY % defaultAttributes "
+	id ID #IMPLIED
+	title CDATA #IMPLIED
+	language CDATA #IMPLIED
+	class CDATA #IMPLIED
+	style CDATA #IMPLIED
+">
+
+<!ELEMENT wikitext (%blockElements;|%spanElements;|#PCDATA)*>
+
+<!ELEMENT heading (%spanElements;|#PCDATA)*>
+<!ATTLIST heading 
+	%defaultAttributes;
+	level CDATA #REQUIRED
+>
+
+<!ELEMENT entity EMPTY>
+<!ATTLIST entity 
+	entity CDATA #REQUIRED
+>
+
+<!ELEMENT image EMPTY>
+<!ATTLIST image 
+	%defaultAttributes;
+	url CDATA #REQUIRED
+>
+
+<!ELEMENT link (image|#PCDATA)>
+<!ATTLIST link 
+	%defaultAttributes;
+	href CDATA #REQUIRED
+>
+
+<!ELEMENT acronym (#PCDATA)*>
+<!ATTLIST acronym 
+	definition CDATA #REQUIRED
+>
+
+<!ELEMENT linebreak EMPTY>
+
+<!ELEMENT unescaped (#PCDATA)*>
+
+<!ELEMENT CODE (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST CODE %defaultAttributes;>
+
+<!ELEMENT DEFINITION_TERM (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DEFINITION_TERM %defaultAttributes;>
+
+<!ELEMENT DIV (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DIV %defaultAttributes;>
+
+<!ELEMENT TABLE_ROW (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLE_ROW %defaultAttributes;>
+
+<!ELEMENT TABLE_CELL_HEADER (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLE_CELL_HEADER %defaultAttributes;>
+
+<!ELEMENT DEFINITION_LIST (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DEFINITION_LIST %defaultAttributes;>
+
+<!ELEMENT TABLE_CELL_NORMAL (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLE_CELL_NORMAL %defaultAttributes;>
+
+<!ELEMENT QUOTE (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST QUOTE %defaultAttributes;>
+
+<!ELEMENT FOOTNOTE (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST FOOTNOTE %defaultAttributes;>
+
+<!ELEMENT TIP (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TIP %defaultAttributes;>
+
+<!ELEMENT NOTE (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST NOTE %defaultAttributes;>
+
+<!ELEMENT PANEL (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST PANEL %defaultAttributes;>
+
+<!ELEMENT PREFORMATTED (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST PREFORMATTED %defaultAttributes;>
+
+<!ELEMENT NUMERIC_LIST (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST NUMERIC_LIST %defaultAttributes;>
+
+<!ELEMENT DEFINITION_ITEM (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DEFINITION_ITEM %defaultAttributes;>
+
+<!ELEMENT TABLE (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLE %defaultAttributes;>
+
+<!ELEMENT LIST_ITEM (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST LIST_ITEM %defaultAttributes;>
+
+<!ELEMENT PARAGRAPH (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST PARAGRAPH %defaultAttributes;>
+
+<!ELEMENT WARNING (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST WARNING %defaultAttributes;>
+
+<!ELEMENT BULLETED_LIST (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST BULLETED_LIST %defaultAttributes;>
+
+<!ELEMENT INFORMATION (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST INFORMATION %defaultAttributes;>
+
+<!ELEMENT INSERTED (%spanelements;|#PCDATA)*>
+<!ATTLIST INSERTED %defaultAttributes;>
+
+<!ELEMENT CITATION (%spanelements;|#PCDATA)*>
+<!ATTLIST CITATION %defaultAttributes;>
+
+<!ELEMENT SUPERSCRIPT (%spanelements;|#PCDATA)*>
+<!ATTLIST SUPERSCRIPT %defaultAttributes;>
+
+<!ELEMENT MONOSPACE (%spanelements;|#PCDATA)*>
+<!ATTLIST MONOSPACE %defaultAttributes;>
+
+<!ELEMENT BOLD (%spanelements;|#PCDATA)*>
+<!ATTLIST BOLD %defaultAttributes;>
+
+<!ELEMENT SPAN (%spanelements;|#PCDATA)*>
+<!ATTLIST SPAN %defaultAttributes;>
+
+<!ELEMENT CODE (%spanelements;|#PCDATA)*>
+<!ATTLIST CODE %defaultAttributes;>
+
+<!ELEMENT DELETED (%spanelements;|#PCDATA)*>
+<!ATTLIST DELETED %defaultAttributes;>
+
+<!ELEMENT QUOTE (%spanelements;|#PCDATA)*>
+<!ATTLIST QUOTE %defaultAttributes;>
+
+<!ELEMENT STRONG (%spanelements;|#PCDATA)*>
+<!ATTLIST STRONG %defaultAttributes;>
+
+<!ELEMENT SUBSCRIPT (%spanelements;|#PCDATA)*>
+<!ATTLIST SUBSCRIPT %defaultAttributes;>
+
+<!ELEMENT UNDERLINED (%spanelements;|#PCDATA)*>
+<!ATTLIST UNDERLINED %defaultAttributes;>
+
+<!ELEMENT LINK (%spanelements;|#PCDATA)*>
+<!ATTLIST LINK %defaultAttributes;>
+
+<!ELEMENT EMPHASIS (%spanelements;|#PCDATA)*>
+<!ATTLIST EMPHASIS %defaultAttributes;>
+
+<!ELEMENT ITALIC (%spanelements;|#PCDATA)*>
+<!ATTLIST ITALIC %defaultAttributes;>

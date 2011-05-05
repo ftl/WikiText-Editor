@@ -1,0 +1,193 @@
+wikitext {
+	display: block;
+}
+
+heading {
+	display: block;
+	font-weight: bold;
+}
+
+entity:BEFORE {
+	content: attr(entity);
+	display: inline;
+}
+
+entity {
+	display: inline;
+}
+
+image {
+	display: block;
+}
+
+link {
+	display: block;
+}
+
+acronym {
+	display: inline;
+}
+
+linebreak {
+	display: block;
+}
+
+unescaped {
+	display: block;
+}
+
+CODE {
+	display: block;
+}
+
+DIV {
+	display: block;
+}
+
+QUOTE {
+	display: block;
+}
+
+FOOTNOTE {
+	display: block;
+}
+
+TIP {
+	display: block;
+}
+
+NOTE {
+	display: block;
+}
+
+PANEL {
+	display: block;
+}
+
+PREFORMATTED {
+	display: block;
+}
+
+PARAGRAPH {
+	display: block;
+}
+
+WARNING {
+	display: block;
+}
+
+INFORMATION {
+	display: block;
+}
+
+DEFINITION_LIST {
+	display: block;
+	margin-bottom: 20px;
+}
+
+DEFINITION_TERM {
+	display: block;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+DEFINITION_ITEM {
+	 display: block;
+	 margin-left: 40px;
+}
+
+BULLETED_LIST {
+	display: block;
+	list-item-style: disc;
+	margin: 10px 40px;
+}
+
+NUMERIC_LIST {
+	display: block;
+	list-item-style: decimal;
+	margin: 10px 40px;
+}
+
+LIST_ITEM {
+	display: list-item;
+}  
+
+/* Table */
+
+TABLE {
+	display: table;
+}
+
+TABLE_ROW {
+	display: table-row;
+}
+
+TABLE_CELL_NORMAL, TABLE_CELL_HEADER {
+	display: table-cell;
+} 
+
+TABLE_CELL_HEADER {
+	font-weight: bold;
+}
+
+/* Inline */
+
+INSERTED {
+	display: inline;
+}
+
+CITATION {
+	display: inline;
+}
+
+SUPERSCRIPT {
+	display: inline;
+}
+
+MONOSPACE {
+	display: inline;
+}
+
+BOLD {
+	display: inline;
+}
+
+SPAN {
+	display: inline;
+}
+
+CODE {
+	display: inline;
+}
+
+DELETED {
+	display: inline;
+}
+
+QUOTE {
+	display: inline;
+}
+
+STRONG {
+	display: inline;
+}
+
+SUBSCRIPT {
+	display: inline;
+}
+
+UNDERLINED {
+	display: inline;
+}
+
+LINK {
+	display: inline;
+}
+
+EMPHASIS {
+	display: inline;
+}
+
+ITALIC {
+	display: inline;
+}
