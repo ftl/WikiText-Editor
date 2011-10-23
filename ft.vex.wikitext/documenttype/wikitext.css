@@ -80,35 +80,35 @@ INFORMATION {
 	display: block;
 }
 
-DEFINITION_LIST {
+DEFINITIONLIST {
 	display: block;
 	margin-bottom: 20px;
 }
 
-DEFINITION_TERM {
+DEFINITIONTERM {
 	display: block;
 	font-weight: bold;
 	margin-top: 20px;
 }
 
-DEFINITION_ITEM {
+DEFINITIONITEM {
 	 display: block;
 	 margin-left: 40px;
 }
 
-BULLETED_LIST {
+BULLETEDLIST {
 	display: block;
 	list-item-style: disc;
 	margin: 10px 40px;
 }
 
-NUMERIC_LIST {
+NUMERICLIST {
 	display: block;
 	list-item-style: decimal;
 	margin: 10px 40px;
 }
 
-LIST_ITEM {
+LISTITEM {
 	display: list-item;
 }  
 
@@ -118,15 +118,16 @@ TABLE {
 	display: table;
 }
 
-TABLE_ROW {
+TABLEROW {
 	display: table-row;
 }
 
-TABLE_CELL_NORMAL, TABLE_CELL_HEADER {
+TABLECELLNORMAL, TABLECELLHEADER {
 	display: table-cell;
+	border: solid;
 } 
 
-TABLE_CELL_HEADER {
+TABLECELLHEADER {
 	font-weight: bold;
 }
 
