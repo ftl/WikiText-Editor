@@ -27,6 +27,7 @@ import org.eclipse.wst.xml.vex.core.internal.css.StyleSheet;
 import org.eclipse.wst.xml.vex.core.internal.css.StyleSheetReader;
 import org.eclipse.wst.xml.vex.core.internal.dom.Document;
 import org.eclipse.wst.xml.vex.core.internal.dom.DocumentWriter;
+import org.eclipse.wst.xml.vex.core.internal.dom.Validator;
 import org.eclipse.wst.xml.vex.core.internal.validator.WTPVEXValidator;
 import org.eclipse.wst.xml.vex.ui.internal.swt.VexWidget;
 
@@ -103,7 +104,7 @@ public class WikiTextEditor extends EditorPart {
 		System.out.println(buffer.toString());
 
 		final URL dtdUrl = FileLocator.find(Activator.getDefault().getBundle(), new Path("documenttype/wikitext.dtd"), null);
-		final WTPVEXValidator validator = WTPVEXValidator.create(dtdUrl);
+		final Validator validator = new WTPVEXValidator(dtdUrl);
 		document.setValidator(validator);
 
 		final URL styleSheetUrl = FileLocator.find(Activator.getDefault().getBundle(), new Path("documenttype/wikitext.css"), null);
