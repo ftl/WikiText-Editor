@@ -17,11 +17,11 @@ import java.util.Stack;
 import org.eclipse.core.runtime.QualifiedName;
 import org.eclipse.mylyn.wikitext.core.parser.Attributes;
 import org.eclipse.mylyn.wikitext.core.parser.DocumentBuilder;
-import org.eclipse.wst.xml.vex.core.internal.dom.Content;
-import org.eclipse.wst.xml.vex.core.internal.dom.Document;
-import org.eclipse.wst.xml.vex.core.internal.dom.Element;
-import org.eclipse.wst.xml.vex.core.internal.dom.GapContent;
-import org.eclipse.wst.xml.vex.core.internal.dom.RootElement;
+import org.eclipse.vex.core.internal.dom.Content;
+import org.eclipse.vex.core.internal.dom.Document;
+import org.eclipse.vex.core.internal.dom.Element;
+import org.eclipse.vex.core.internal.dom.GapContent;
+import org.eclipse.vex.core.internal.dom.RootElement;
 
 /**
  * @author Florian Thienel
