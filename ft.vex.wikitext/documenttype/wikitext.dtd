@@ -1,4 +1,4 @@
-<!ENTITY % blockElements "heading|entity|image|link|acronym|linebreak|unescaped|CODE|DEFINITION_TERM|DIV|TABLE_ROW|TABLE_CELL_HEADER|DEFINITION_LIST|TABLE_CELL_NORMAL|QUOTE|FOOTNOTE|TIP|NOTE|PANEL|PREFORMATTED|NUMERIC_LIST|DEFINITION_ITEM|TABLE|LIST_ITEM|PARAGRAPH|WARNING|BULLETED_LIST|INFORMATION" >
+<!ENTITY % blockElements "heading|entity|image|link|acronym|linebreak|unescaped|CODE|DEFINITIONTERM|DIV|TABLEROW|TABLECELLHEADER|DEFINITIONLIST|TABLECELLNORMAL|QUOTE|FOOTNOTE|TIP|NOTE|PANEL|PREFORMATTED|NUMERICLIST|DEFINITIONITEM|TABLE|LISTITEM|PARAGRAPH|WARNING|BULLETEDLIST|INFORMATION" >
 <!ENTITY % spanElements "INSERTED|CITATION|SUPERSCRIPT|MONOSPACE|BOLD|SPAN|CODE|DELETED|QUOTE|STRONG|SUBSCRIPT|UNDERLINED|LINK|EMPHASIS|ITALIC" >
 <!ENTITY % defaultAttributes "
 	id ID #IMPLIED
@@ -45,23 +45,23 @@
 <!ELEMENT CODE (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST CODE %defaultAttributes;>
 
-<!ELEMENT DEFINITION_TERM (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST DEFINITION_TERM %defaultAttributes;>
+<!ELEMENT DEFINITIONTERM (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DEFINITIONTERM %defaultAttributes;>
 
 <!ELEMENT DIV (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST DIV %defaultAttributes;>
 
-<!ELEMENT TABLE_ROW (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST TABLE_ROW %defaultAttributes;>
+<!ELEMENT TABLEROW (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLEROW %defaultAttributes;>
 
-<!ELEMENT TABLE_CELL_HEADER (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST TABLE_CELL_HEADER %defaultAttributes;>
+<!ELEMENT TABLECELLHEADER (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLECELLHEADER %defaultAttributes;>
 
-<!ELEMENT DEFINITION_LIST (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST DEFINITION_LIST %defaultAttributes;>
+<!ELEMENT DEFINITIONLIST (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DEFINITIONLIST %defaultAttributes;>
 
-<!ELEMENT TABLE_CELL_NORMAL (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST TABLE_CELL_NORMAL %defaultAttributes;>
+<!ELEMENT TABLECELLNORMAL (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLECELLNORMAL %defaultAttributes;>
 
 <!ELEMENT QUOTE (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST QUOTE %defaultAttributes;>
@@ -81,17 +81,17 @@
 <!ELEMENT PREFORMATTED (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST PREFORMATTED %defaultAttributes;>
 
-<!ELEMENT NUMERIC_LIST (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST NUMERIC_LIST %defaultAttributes;>
+<!ELEMENT NUMERICLIST (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST NUMERICLIST %defaultAttributes;>
 
-<!ELEMENT DEFINITION_ITEM (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST DEFINITION_ITEM %defaultAttributes;>
+<!ELEMENT DEFINITIONITEM (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DEFINITIONITEM %defaultAttributes;>
 
 <!ELEMENT TABLE (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST TABLE %defaultAttributes;>
 
-<!ELEMENT LIST_ITEM (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST LIST_ITEM %defaultAttributes;>
+<!ELEMENT LISTITEM (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST LISTITEM %defaultAttributes;>
 
 <!ELEMENT PARAGRAPH (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST PARAGRAPH %defaultAttributes;>
@@ -99,8 +99,8 @@
 <!ELEMENT WARNING (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST WARNING %defaultAttributes;>
 
-<!ELEMENT BULLETED_LIST (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST BULLETED_LIST %defaultAttributes;>
+<!ELEMENT BULLETEDLIST (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST BULLETEDLIST %defaultAttributes;>
 
 <!ELEMENT INFORMATION (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST INFORMATION %defaultAttributes;>
