@@ -42,13 +42,13 @@ public class VexDocumentBuilder extends DocumentBuilder {
 	public static final Map<BlockType, QualifiedName> BLOCK_ELEMENTS = new HashMap<BlockType, QualifiedName>();
 	static {
 		for (BlockType blockType : BlockType.values())
-			BLOCK_ELEMENTS.put(blockType, new QualifiedName(WIKITEXT_NAMESPACE, blockType.name().replaceAll("_", "")));
+			BLOCK_ELEMENTS.put(blockType, new QualifiedName(WIKITEXT_NAMESPACE, blockType.name()));
 	}
 
 	public static final Map<SpanType, QualifiedName> SPAN_ELEMENTS = new HashMap<SpanType, QualifiedName>();
 	static {
 		for (SpanType spanType : SpanType.values())
-			SPAN_ELEMENTS.put(spanType, new QualifiedName(WIKITEXT_NAMESPACE, spanType.name().replaceAll("_", "")));
+			SPAN_ELEMENTS.put(spanType, new QualifiedName(WIKITEXT_NAMESPACE, spanType.name()));
 	}
 
 	private Document document;
