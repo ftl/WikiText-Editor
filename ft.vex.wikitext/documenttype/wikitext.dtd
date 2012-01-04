@@ -14,6 +14,7 @@
 <!ATTLIST heading 
 	%defaultAttributes;
 	level CDATA #REQUIRED
+	omitFromTableOfContents CDATA "false"
 >
 
 <!ELEMENT entity EMPTY>
@@ -25,12 +26,19 @@
 <!ATTLIST image 
 	%defaultAttributes;
 	url CDATA #REQUIRED
+	width CDATA #IMPLIED
+	height CDATA #IMPLIED
+	border CDATA "0"
+	align CDATA #IMPLIED
+	alt CDATA #IMPLIED
 >
 
-<!ELEMENT link (image|#PCDATA)>
-<!ATTLIST link 
+<!ELEMENT LINK (%spanelements;|#PCDATA)*>
+<!ATTLIST LINK 
 	%defaultAttributes;
 	href CDATA #REQUIRED
+	target CDATA #IMPLIED
+	rel CDATA #IMPLIED
 >
 
 <!ELEMENT acronym (#PCDATA)*>
@@ -45,26 +53,73 @@
 <!ELEMENT CODE (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST CODE %defaultAttributes;>
 
-<!ELEMENT DEFINITIONTERM (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST DEFINITIONTERM %defaultAttributes;>
+<!ELEMENT NUMERIC_LIST (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST NUMERIC_LIST %defaultAttributes;>
+
+<!ELEMENT BULLETED_LIST (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST BULLETED_LIST %defaultAttributes;>
+
+<!ELEMENT LIST_ITEM (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST LIST_ITEM %defaultAttributes;>
+
+<!ELEMENT DEFINITION_LIST (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DEFINITION_LIST %defaultAttributes;>
+
+<!ELEMENT DEFINITION_ITEM (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DEFINITION_ITEM %defaultAttributes;>
+
+<!ELEMENT DEFINITION_TERM (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST DEFINITION_TERM %defaultAttributes;>
 
 <!ELEMENT DIV (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST DIV %defaultAttributes;>
 
-<!ELEMENT TABLEROW (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST TABLEROW %defaultAttributes;>
+<!ELEMENT TABLE (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLE 
+	%defaultAttributes;
+	border CDATA "0"
+	summary CDATA #IMPLIED
+	width CDATA #IMPLIED
+	frame CDATA #IMPLIED
+	rules CDATA #IMPLIED
+	cellspacing CDATA #IMPLIED
+	cellpadding CDATA #IMPLIED
+	bgcolor CDATA #IMPLIED
+>
 
-<!ELEMENT TABLECELLHEADER (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST TABLECELLHEADER %defaultAttributes;>
+<!ELEMENT TABLE_ROW (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLE_ROW 
+	%defaultAttributes;
+	bgcolor CDATA #IMPLIED
+	align CDATA #IMPLIED
+	valign CDATA #IMPLIED
+>
 
-<!ELEMENT DEFINITIONLIST (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST DEFINITIONLIST %defaultAttributes;>
+<!ELEMENT TABLE_CELL_HEADER (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLE_CELL_HEADER 
+	%defaultAttributes;
+	bgcolor CDATA #IMPLIED
+	align CDATA #IMPLIED
+	valign CDATA #IMPLIED
+	rowspan CDATA #IMPLIED
+	colspan CDATA #IMPLIED
+>
 
-<!ELEMENT TABLECELLNORMAL (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST TABLECELLNORMAL %defaultAttributes;>
+<!ELEMENT TABLE_CELL_NORMAL (%blockElements;|%spanElements;|#PCDATA)*>
+<!ATTLIST TABLE_CELL_NORMAL
+	%defaultAttributes;
+	bgcolor CDATA #IMPLIED
+	align CDATA #IMPLIED
+	valign CDATA #IMPLIED
+	rowspan CDATA #IMPLIED
+	colspan CDATA #IMPLIED
+>
 
 <!ELEMENT QUOTE (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST QUOTE %defaultAttributes;>
+<!ATTLIST QUOTE 
+	%defaultAttributes;
+	citation CDATA #IMPLIED
+>
 
 <!ELEMENT FOOTNOTE (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST FOOTNOTE %defaultAttributes;>
@@ -81,26 +136,11 @@
 <!ELEMENT PREFORMATTED (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST PREFORMATTED %defaultAttributes;>
 
-<!ELEMENT NUMERICLIST (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST NUMERICLIST %defaultAttributes;>
-
-<!ELEMENT DEFINITIONITEM (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST DEFINITIONITEM %defaultAttributes;>
-
-<!ELEMENT TABLE (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST TABLE %defaultAttributes;>
-
-<!ELEMENT LISTITEM (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST LISTITEM %defaultAttributes;>
-
 <!ELEMENT PARAGRAPH (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST PARAGRAPH %defaultAttributes;>
 
 <!ELEMENT WARNING (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST WARNING %defaultAttributes;>
-
-<!ELEMENT BULLETEDLIST (%blockElements;|%spanElements;|#PCDATA)*>
-<!ATTLIST BULLETEDLIST %defaultAttributes;>
 
 <!ELEMENT INFORMATION (%blockElements;|%spanElements;|#PCDATA)*>
 <!ATTLIST INFORMATION %defaultAttributes;>
@@ -140,9 +180,6 @@
 
 <!ELEMENT UNDERLINED (%spanelements;|#PCDATA)*>
 <!ATTLIST UNDERLINED %defaultAttributes;>
-
-<!ELEMENT LINK (%spanelements;|#PCDATA)*>
-<!ATTLIST LINK %defaultAttributes;>
 
 <!ELEMENT EMPHASIS (%spanelements;|#PCDATA)*>
 <!ATTLIST EMPHASIS %defaultAttributes;>
