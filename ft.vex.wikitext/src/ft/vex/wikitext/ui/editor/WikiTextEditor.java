@@ -26,7 +26,6 @@ import org.eclipse.mylyn.wikitext.core.parser.MarkupParser;
 import org.eclipse.mylyn.wikitext.core.parser.markup.MarkupLanguage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Text;
 import org.eclipse.ui.IEditorInput;
 import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IFileEditorInput;
@@ -44,14 +43,11 @@ import org.eclipse.vex.ui.internal.swt.VexWidget;
 import ft.vex.wikitext.Activator;
 import ft.vex.wikitext.VexDocumentBuilder;
 
-@SuppressWarnings("restriction")
 public class WikiTextEditor extends EditorPart {
 
 	public static final String ID = "ft.vex.wikitext.editor"; //$NON-NLS-1$
 
 	private Document document;
-
-	private Text sourceText;
 
 	private VexWidget vexWidget;
 

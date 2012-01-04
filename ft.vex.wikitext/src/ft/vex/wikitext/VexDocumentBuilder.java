@@ -26,7 +26,6 @@ import org.eclipse.vex.core.internal.dom.RootElement;
 /**
  * @author Florian Thienel
  */
-@SuppressWarnings("restriction")
 public class VexDocumentBuilder extends DocumentBuilder {
 
 	public static final String WIKITEXT_NAMESPACE = null;
